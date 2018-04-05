@@ -16,6 +16,8 @@ public class Recipe {
 	private Integer servings;
 	private String source;
 	private String url;
+
+	@Lob
 	private String directions;
 
 	// EnumType.STRING persists data as the enum name in the database, not the number.
@@ -34,6 +36,12 @@ public class Recipe {
 
 	@ManyToMany
 	private Set<Category> categories;
+
+	public Recipe addIngredient(Ingredient ingredient){
+		ingredient.setRecipe(this);
+		this.ingredients.add(ingredient);
+		return this;
+	}
 
 	public String getDescription() {
 		return description;
