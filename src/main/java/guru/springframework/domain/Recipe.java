@@ -17,8 +17,12 @@ public class Recipe {
 	private String source;
 	private String url;
 	private String directions;
-	// Todo: add
-	// pirvate Difficulty difficulty;
+
+	// EnumType.STRING persists data as the enum name in the database, not the number.
+	// Default is EnumType.ORDINAL which persists the enum value
+	@Enumerated(value = EnumType.STRING)
+	private Difficulty difficulty;
+
 	@Lob
 	private Byte[] image;
 
@@ -98,5 +102,29 @@ public class Recipe {
 
 	public void setNotes(Notes notes) {
 		this.notes = notes;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Difficulty getDifficulty() {
+		return difficulty;
+	}
+
+	public void setDifficulty(Difficulty difficulty) {
+		this.difficulty = difficulty;
+	}
+
+	public Set<Ingredient> getIngredients() {
+		return ingredients;
+	}
+
+	public void setIngredients(Set<Ingredient> ingredients) {
+		this.ingredients = ingredients;
 	}
 }
