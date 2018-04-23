@@ -6,7 +6,7 @@
 - install Lombok plugin inside IntelliJ (preferences/plugins/browse plugins)
 
 ### Requirements
-- Java SDK 1.8
+- JDK 1.8
 - IntelliJ or Eclipse
 - Project language level 8 - Lambdas, type annotations etc.
 - Target bytecode version: 1.8
